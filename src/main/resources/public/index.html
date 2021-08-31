@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="/fileUpload" enctype="multipart/form-data" method="post">
+        <input name="file" type="file">
+        <input type="submit" value="提交">
+    </form>
+
+    <form action="/addUser" method="get">
+        <div class="form-group">
+            <label>用户名</label>
+            <input name="username" class="form-control">
+        </div>
+        <div>
+            <label>密码</label>
+            <input name="password" class="form-control">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">添加</button>
+        </div>
+    </form>
+
+    <a href="UserList.html">用户列表</a>
+</body>
+</html>

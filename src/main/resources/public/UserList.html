@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="/jquery-3.5.1.js"></script>
+
+    <script type="text/javascript">
+        function a(){
+            $.ajax({
+                url: "http://localhost:8080/getUser",
+                data: {},
+                dataType: "json",
+                success: function (data){
+                    let html="";
+                    for (let i=0;i<data.data.length;i++){
+                        html+="<tr><td>"+data.data[i].uuid+"</td>"+
+                            "<td>"+data.data[i].username+"</td>"+
+                            "<td>"+data.data[i].password+"</td>"+
+                            "<td>"+data.data[i].registrationtime+"</td></tr>";
+                    }
+                    $("#userdata").html(html);
+                }
+            });
+        }
+        a();
+    </script>
+</head>
+<body>
+    <table class="table table-bordered">
+      <tr>
+        <td>uuid</td>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>注册时间</td>
+      </tr>
+      <tbody id="userdata">
+
+      </tbody>
+    </table>
+</body>
+</html>
